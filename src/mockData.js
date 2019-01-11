@@ -2,40 +2,45 @@ const myChecklist = [
     {
         id: '1',
         content: 'Toothbrush',
+        category: 'Toiletries',
         subItemIds: [],
-        canDoInAdvance: false,
+        isLastMinute: true,
         isDone: false,
         isSubItem: false
     },
     {
         id: '2',
         content: 'Hat',
+        category: 'Clothes',
         subItemIds: [],
-        canDoInAdvance: true,
+        isLastMinute: false,
         isDone: false,
         isSubItem: false
     },
     {
         id: '3',
         content: 'Phone stuff',
+        category: 'Electronics',
         subItemIds: [4, 5],
-        canDoInAdvance: false,
+        isLastMinute: null,
         isDone: false,
         isSubItem: false
     },
     {
         id: '4',
         content: 'Phone charger',
+        category: 'Electronics',
         subItemIds: [],
-        canDoInAdvance: false,
+        isLastMinute: true,
         isDone: false,
         isSubItem: true
     },
     {
         id: '5',
         content: 'Phone battery pack',
+        category: 'Electronics',
         subItemIds: [],
-        canDoInAdvance: true,
+        isLastMinute: false,
         isDone: false,
         isSubItem: true
     },
@@ -46,4 +51,6 @@ const itemsById = myChecklist.reduce((accumulator, currentItem) => ({
     [currentItem.id]: currentItem
 }), {});
 
-export { myChecklist, itemsById };
+const allIds = myChecklist.map(item => item.id)
+
+export { myChecklist, itemsById, allIds };

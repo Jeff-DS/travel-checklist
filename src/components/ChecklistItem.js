@@ -1,15 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import classNames from 'classnames';
+//
+import { shouldBeVisible } from '../redux-files/reducers/items';
 
 // TODO: render the HTML in content, don't just render the string. but worry about security.
-// TODO: in subItems, have to use the id to get the actual item from wherever they're stored.
-// and have to pass in the rest of the props.
 const _ChecklistItem = ({
     id,
     content,
     subItemIds,
-    canDoInAdvance,
     isDone
 }) => {
 
@@ -41,11 +40,13 @@ const _ChecklistItem = ({
 };
 
 const mapStateToProps = (state, ownProps) => {
-    const item = state.checklist.itemsById[ownProps.id];
+    const item = state.items.byId[ownProps.id];
     // filter sub-items to those that should be shown
-    const dayToShow = state.ui.dayToShow;
-    const idsToShow = state.checklist.idsByDay[dayToShow];
-    const subIdsToShow = item.subItemIds.filter(id => idsToShow.includes(id))
+    const lastMinuteItemsShown = state.ui.lastMinuteItemsShown;
+    const subIdsToShow = item.subItemIds.filter(subItemId => {
+        const subItem = state.items.byId[subItemId];
+        return shouldBeVisible(subItem, lastMinuteItemsShown);
+    });
 
     return {
         ...item,

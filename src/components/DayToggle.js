@@ -2,46 +2,43 @@ import React from 'react';
 import { connect } from 'react-redux';
 import classNames from 'classnames';
 //
-import { showDayBeforeTravel, showDayOfTravel } from '../redux-files/actions/ui';
+import { showAdvanceItems, showLastMinuteItems } from '../redux-files/actions/ui';
 import styles from '../styles/components/DayToggle.css';
 
 const DayToggle = ({
-    dayShown,
-    showDayBeforeTravel,
-    showDayOfTravel
+    lastMinuteItemsShown,
+    showAdvanceItems,
+    showLastMinuteItems
 }) => {
+
+    const dayBeforeClass = classNames('', {[styles.active]: !lastMinuteItemsShown});
+    const dayOfClass = classNames('', {[styles.active]: lastMinuteItemsShown});
 
     return (
         <div>
             <div
-                className={classNames(
-                    '',
-                    {[styles.active]: dayShown === 'dayBefore'}
-                )}
-                onClick={showDayBeforeTravel}
+                className={dayBeforeClass}
+                onClick={showAdvanceItems}
             >
-                Day Before
+                To do in advance
             </div>
             <div
-                className={classNames(
-                    '',
-                    {[styles.active]: dayShown === 'dayOf'}
-                )}
-                onClick={showDayOfTravel}
+                className={dayOfClass}
+                onClick={showLastMinuteItems}
             >
-                Day Of
+                To do last minute
             </div>
         </div>
     );
 };
 
 const mapStateToProps = state => ({
-    dayShown: state.ui.dayToShow
+    lastMinuteItemsShown: state.ui.lastMinuteItemsShown
 });
 
 const mapDispatchToProps = dispatch => ({
-    showDayBeforeTravel: () => dispatch(showDayBeforeTravel()),
-    showDayOfTravel: () => dispatch(showDayOfTravel())
+    showAdvanceItems: () => dispatch(showAdvanceItems()),
+    showLastMinuteItems: () => dispatch(showLastMinuteItems())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(DayToggle);

@@ -1,9 +1,9 @@
-import { SHOW_DAY_BEFORE_TRAVEL, SHOW_DAY_OF_TRAVEL } from '../actionTypes';
+import { SHOW_ADVANCE_ITEMS, SHOW_LAST_MINUTE_ITEMS } from '../actionTypes';
 
-export const showDayBeforeTravel = () => ({
-    type: SHOW_DAY_BEFORE_TRAVEL
+export const showAdvanceItems = () => ({
+    type: SHOW_ADVANCE_ITEMS
 });
 
-export const showDayOfTravel = () => ({
-    type: SHOW_DAY_OF_TRAVEL
+export const showLastMinuteItems = () => ({
+    type: SHOW_LAST_MINUTE_ITEMS
 });
