@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import { createSelector } from 'reselect';
+//
 // TODO: this imports mock data, for testing only
 import { itemsById, allIds as _allIds } from '../../mockData';
 
@@ -36,36 +36,5 @@ const itemsReducer = combineReducers({
     byId,
     allIds
 });
+
 export default itemsReducer;
-
-export const shouldBeVisible = (item, lastMinuteItemsShown) => {
-    return [lastMinuteItemsShown, null].includes(item.isLastMinute)
-};
-
-// selector used by Checklist component
-export const getVisibleIdsByCategory = createSelector(
-    [
-        state => state.items.byId,
-        state => state.items.allIds,
-        state => state.ui.lastMinuteItemsShown,
-        state => state.categoryOrder
-    ],
-    (itemsById, ids, lastMinuteItemsShown, categoryOrder) => {
-        const idsToShowByCategory = ids
-            .filter(id => shouldBeVisible(itemsById[id], lastMinuteItemsShown))
-            .filter(id => !itemsById[id].isSubItem)
-            .reduce((obj, id) => {
-                const category = [itemsById[id].category];
-                return {
-                    ...obj,
-                    [category]: [ ...obj.category || [], id ]
-                };
-            }, {}
-        );
-
-        return {
-            idsToShowByCategory,
-            categoryOrder
-        };
-    }
-);
