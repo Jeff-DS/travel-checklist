@@ -20,6 +20,17 @@ module.exports = (env) => {
       path: path.join(__dirname, 'public', 'dist'),
       filename: 'bundle.js'
     },
+    resolve: {
+      alias: {
+        Styles: path.resolve(__dirname, 'src/styles'),
+        Components: path.resolve(__dirname, 'src/components'),
+        Actions: path.resolve(__dirname, 'src/redux-files/actions'),
+        ActionTypes$: path.resolve(__dirname, 'src/redux-files/actionTypes.js'),
+        Reducers: path.resolve(__dirname, 'src/redux-files/reducers'),
+        Selectors$: path.resolve(__dirname, 'src/redux-files/selectors.js'),
+        Utils$: path.resolve(__dirname, 'src/utils.js')
+      }
+    },
     module: {
       rules: [
         {
