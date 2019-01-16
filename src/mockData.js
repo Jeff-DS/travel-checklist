@@ -44,6 +44,15 @@ const myChecklist = [
         isDone: false,
         isSubItem: true
     },
+    {
+        id: '6',
+        content: 'Passport',
+        category: 'Documents',
+        subItemIds: [],
+        isLastMinute: false,
+        isDone: false,
+        isSubItem: false
+    }
 ];
 
 const itemsById = myChecklist.reduce((accumulator, currentItem) => ({

@@ -1,5 +1,6 @@
 import { combineReducers } from 'redux';
-import { SHOW_LAST_MINUTE_ITEMS, SHOW_ADVANCE_ITEMS } from '../actionTypes';
+//
+import { SHOW_LAST_MINUTE_ITEMS, SHOW_ADVANCE_ITEMS } from 'ActionTypes';
 
 const lastMinuteItemsShown = (state = false, action) => {
     switch (action.type) {

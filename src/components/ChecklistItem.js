@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import classNames from 'classnames';
 //
-import { shouldBeVisible } from '../utils';
+import { shouldBeVisible } from 'Utils';
 
 // TODO: render the HTML in content, don't just render the string. but worry about security.
 const _ChecklistItem = ({

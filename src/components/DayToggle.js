@@ -2,8 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import classNames from 'classnames';
 //
-import { showAdvanceItems, showLastMinuteItems } from '../redux-files/actions/ui';
-import styles from '../styles/components/DayToggle.css';
+import { showAdvanceItems, showLastMinuteItems } from 'Actions/ui';
+import styles from 'Styles/components/DayToggle.css';
 
 const DayToggle = ({
     lastMinuteItemsShown,

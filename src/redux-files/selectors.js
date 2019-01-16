@@ -1,11 +1,17 @@
 import { createSelector } from 'reselect';
 //
-import { shouldBeVisible } from '../utils';
+import { shouldBeVisible } from 'Utils';
+
+const getItemsForTripType = state => {
+    return state.tripTypes.active === null
+        ? []
+        : state.tripTypes.byId[state.tripTypes.active].items;
+};
 
 export const getVisibleIdsByCategory = createSelector(
     [
         state => state.items.byId,
-        state => state.items.allIds,
+        state => getItemsForTripType(state),
         state => state.ui.lastMinuteItemsShown,
         state => state.categoryOrder
     ],
@@ -17,10 +23,9 @@ export const getVisibleIdsByCategory = createSelector(
                 const category = [itemsById[id].category];
                 return {
                     ...obj,
-                    [category]: [ ...obj.category || [], id ]
+                    [category]: [...(obj.category || []), id]
                 };
-            }, {}
-        );
+            }, {});
 
         return {
             idsToShowByCategory,
