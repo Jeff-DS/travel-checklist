@@ -1,6 +1,6 @@
 import { createSelector } from 'reselect';
 //
-import { shouldBeVisible } from 'Utils';
+import { shouldBeVisible } from 'utils';
 
 const getItemsForTripType = state => {
     return state.tripTypes.active === null
@@ -20,7 +20,7 @@ export const getVisibleIdsByCategory = createSelector(
             .filter(id => shouldBeVisible(itemsById[id], lastMinuteItemsShown))
             .filter(id => !itemsById[id].isSubItem)
             .reduce((obj, id) => {
-                const category = [itemsById[id].category];
+                const category = itemsById[id].category;
                 return {
                     ...obj,
                     [category]: [...(obj.category || []), id]

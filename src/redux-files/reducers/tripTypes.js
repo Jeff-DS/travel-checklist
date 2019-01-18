@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 //
-import { SET_TRIP_TYPE } from 'ActionTypes';
+import { SET_TRIP_TYPE } from 'actionTypes';
 
 const initialState = {
     byId: {

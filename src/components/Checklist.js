@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 //
-import Category from 'Components/Category';
-import { getVisibleIdsByCategory } from 'Selectors';
+import Category from 'components/Category';
+import { getVisibleIdsByCategory } from 'selectors';
 
 const Checklist = ({ categoryOrder, idsToShowByCategory }) => {
 

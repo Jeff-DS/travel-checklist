@@ -1,4 +1,4 @@
-import { SHOW_ADVANCE_ITEMS, SHOW_LAST_MINUTE_ITEMS } from 'ActionTypes';
+import { SHOW_ADVANCE_ITEMS, SHOW_LAST_MINUTE_ITEMS } from 'actionTypes';
 
 export const showAdvanceItems = () => ({
     type: SHOW_ADVANCE_ITEMS

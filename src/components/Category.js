@@ -1,6 +1,6 @@
 import React from "react";
 //
-import ChecklistItem from 'Components/ChecklistItem';
+import ChecklistItem from 'components/ChecklistItem';
 
 const Category = ({ name, ids }) => (
     <div>

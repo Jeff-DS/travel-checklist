@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 //
-import { setTripType } from 'Actions/tripTypes';
-import styles from 'Styles/components/TripTypePicker.css';
+import { setTripType } from 'actions/tripTypes';
+import styles from 'styles/components/TripTypePicker.css';
 
 const TripTypePicker = ({ tripTypes, activeTripType, setTripType }) => (
     <div>

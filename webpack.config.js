@@ -22,13 +22,14 @@ module.exports = (env) => {
     },
     resolve: {
       alias: {
-        Styles: path.resolve(__dirname, 'src/styles'),
-        Components: path.resolve(__dirname, 'src/components'),
-        Actions: path.resolve(__dirname, 'src/redux-files/actions'),
-        ActionTypes$: path.resolve(__dirname, 'src/redux-files/actionTypes.js'),
-        Reducers: path.resolve(__dirname, 'src/redux-files/reducers'),
-        Selectors$: path.resolve(__dirname, 'src/redux-files/selectors.js'),
-        Utils$: path.resolve(__dirname, 'src/utils.js')
+        src: path.resolve(__dirname, 'src'),
+        styles: path.resolve(__dirname, 'src/styles'),
+        components: path.resolve(__dirname, 'src/components'),
+        actions: path.resolve(__dirname, 'src/redux-files/actions'),
+        actionTypes$: path.resolve(__dirname, 'src/redux-files/actionTypes.js'),
+        reducers: path.resolve(__dirname, 'src/redux-files/reducers'),
+        selectors$: path.resolve(__dirname, 'src/redux-files/selectors.js'),
+        utils$: path.resolve(__dirname, 'src/utils.js')
       }
     },
     module: {

@@ -1,8 +1,8 @@
 import React from 'react';
 //
-import Checklist from 'Components/Checklist';
-import TripTypePicker from 'Components/TripTypePicker';
-import DayToggle from 'Components/DayToggle';
+import Checklist from 'components/Checklist';
+import TripTypePicker from 'components/TripTypePicker';
+import DayToggle from 'components/DayToggle';
 
 const App = () => (
     <div className="app">

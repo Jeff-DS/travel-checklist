@@ -1,8 +1,8 @@
 import { createStore, combineReducers } from 'redux';
-import ui from 'Reducers/ui';
-import items from 'Reducers/items';
-import categoryOrder from 'Reducers/categoryOrder';
-import tripTypes from 'Reducers/tripTypes';
+import ui from 'reducers/ui';
+import items from 'reducers/items';
+import categoryOrder from 'reducers/categoryOrder';
+import tripTypes from 'reducers/tripTypes';
 
 const configureStore = () => {
     const rootReducer = combineReducers({
