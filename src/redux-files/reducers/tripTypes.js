@@ -47,10 +47,10 @@ const active = (state = initialState.active, action) => {
     }
 };
 
-const tripTypeReducer = combineReducers({
+const tripTypesReducer = combineReducers({
     byId,
     allIds,
     active
 });
 
-export default tripTypeReducer;
+export default tripTypesReducer;

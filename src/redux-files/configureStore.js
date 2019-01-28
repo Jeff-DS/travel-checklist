@@ -5,7 +5,7 @@ import hardSet from 'redux-persist/lib/stateReconciler/hardSet'
 //
 import ui from 'reducers/ui';
 import items from 'reducers/items';
-import categoryOrder from 'reducers/categoryOrder';
+import categories from 'reducers/categories';
 import tripTypes from 'reducers/tripTypes';
 
 const persistConfig = {
@@ -17,7 +17,7 @@ const persistConfig = {
 const configureStore = () => {
     const rootReducer = combineReducers({
         items,
-        categoryOrder,
+        categories,
         tripTypes,
         ui
     });

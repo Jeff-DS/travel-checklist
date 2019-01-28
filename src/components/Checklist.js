@@ -4,11 +4,11 @@ import { connect } from 'react-redux';
 import Category from 'components/Category';
 import { getVisibleIdsByCategory } from 'selectors';
 
-const Checklist = ({ categoryOrder, idsToShowByCategory }) => {
+const Checklist = ({ categories, idsToShowByCategory }) => {
 
     return (
         <div>
-            {categoryOrder.map(category => (
+            {categories.map(category => (
                 <Category
                     key={category}
                     name={category}

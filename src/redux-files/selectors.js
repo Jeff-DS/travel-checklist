@@ -13,23 +13,25 @@ export const getVisibleIdsByCategory = createSelector(
         state => state.items.byId,
         state => getItemsForTripType(state),
         state => state.ui.lastMinuteItemsShown,
-        state => state.categoryOrder
+        state => state.categories
     ],
-    (itemsById, ids, lastMinuteItemsShown, categoryOrder) => {
+    (itemsById, ids, lastMinuteItemsShown, categories) => {
         const idsToShowByCategory = ids
             .filter(id => shouldBeVisible(itemsById[id], lastMinuteItemsShown))
             .filter(id => !itemsById[id].isSubItem)
             .reduce((obj, id) => {
-                const category = itemsById[id].category;
+                const item = itemsById[id];
+                const category = categories.byId[item.category].name;
                 return {
                     ...obj,
-                    [category]: [...(obj.category || []), id]
+                    [category]: [...(obj[category] || []), id]
                 };
             }, {});
+        const orderedCategoryNames = categories.allIds.map(id => categories.byId[id].name);
 
         return {
             idsToShowByCategory,
-            categoryOrder
+            categories: orderedCategoryNames
         };
     }
 );

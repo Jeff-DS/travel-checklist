@@ -2,7 +2,7 @@ const myChecklist = [
     {
         id: '1',
         content: 'Toothbrush',
-        category: 'Toiletries',
+        category: '1',
         subItemIds: [],
         isLastMinute: true,
         isDone: false,
@@ -11,7 +11,7 @@ const myChecklist = [
     {
         id: '2',
         content: 'Hat',
-        category: 'Clothes',
+        category: '2',
         subItemIds: [],
         isLastMinute: false,
         isDone: false,
@@ -20,7 +20,7 @@ const myChecklist = [
     {
         id: '3',
         content: 'Phone stuff',
-        category: 'Electronics',
+        category: '4',
         subItemIds: [4, 5],
         isLastMinute: null,
         isDone: false,
@@ -29,7 +29,7 @@ const myChecklist = [
     {
         id: '4',
         content: 'Phone charger',
-        category: 'Electronics',
+        category: '4',
         subItemIds: [],
         isLastMinute: true,
         isDone: false,
@@ -38,7 +38,7 @@ const myChecklist = [
     {
         id: '5',
         content: 'Phone battery pack',
-        category: 'Electronics',
+        category: '4',
         subItemIds: [],
         isLastMinute: false,
         isDone: false,
@@ -47,7 +47,7 @@ const myChecklist = [
     {
         id: '6',
         content: 'Passport',
-        category: 'Documents',
+        category: '5',
         subItemIds: [],
         isLastMinute: false,
         isDone: false,
