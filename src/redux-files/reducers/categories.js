@@ -12,13 +12,13 @@ import { combineReducers } from 'redux';
 
 const initialState = {
     byId: {
-        '1': { name: 'Toiletries' },
-        '2': { name: 'Clothes' },
-        '3': { name: 'Books/papers' },
-        '4': { name: 'Electronics' },
-        '5': { name: 'Documents' },
-        '6': { name: 'Other' },
-        '7': { name: 'Tasks before leaving' }
+        '1': { name: 'Toiletries', id: '1' },
+        '2': { name: 'Clothes', id: '2' },
+        '3': { name: 'Books/papers', id: '3' },
+        '4': { name: 'Electronics', id: '4' },
+        '5': { name: 'Documents', id: '5' },
+        '6': { name: 'Other', id: '6' },
+        '7': { name: 'Tasks before leaving', id: '7' }
     },
     allIds: ['1', '2', '3', '4', '5', '6', '7']
 };

@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 //
-import { SET_TRIP_TYPE } from 'actionTypes';
+import { SET_TRIP_TYPE, ADD_ITEM_TO_TRIP_TYPE } from 'actionTypes';
 
 const initialState = {
     byId: {
@@ -26,15 +26,24 @@ const initialState = {
 
 const byId = (state = initialState.byId, action) => {
     switch (action.type) {
+        case ADD_ITEM_TO_TRIP_TYPE:
+            const { item, tripType } = action.payload;
+            return {
+                ...state,
+                [tripType]: {
+                    ...state[tripType],
+                    items: [...state[tripType].items, item]
+                }
+            };
         default:
-        return state;
+            return state;
     }
 };
 
 const allIds = (state = initialState.allIds, action) => {
     switch (action.type) {
         default:
-        return state;
+            return state;
     }
 };
 
