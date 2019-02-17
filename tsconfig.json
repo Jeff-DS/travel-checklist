@@ -1,24 +1,23 @@
 {
     "compilerOptions": {
-      "target": "ES2015",
-      "module": "commonjs",
-      "declaration": false,
-      "outDir": "lib",
-      "strict": true,
-      "removeComments": true,
-      "allowJs": true,
-      "baseUrl": "src",
+        "target": "ES2015",
+        "module": "commonjs",
+        "declaration": false,
+        "outDir": "lib",
+        "strict": true,
+        "removeComments": true,
+        "allowJs": true,
+        "baseUrl": "src",
         "paths": {
-            "styles/*": [ "styles/*" ],
-            "components/*": [ "components/*" ],
-            "actions/*": [ "redux-files/actions/*" ],
-            "reducers/*": [ "redux-files/reducers/*" ],
-            "actionTypes": [ "redux-files/actionTypes.js" ],
-            "selectors": [ "redux-files/selectors.js" ],
-            "utils": [ "utils.js" ]
+            "styles/*": ["styles/*"],
+            "components/*": ["components/*"],
+            "actions/*": ["redux-files/actions/*"],
+            "reducers/*": ["redux-files/reducers/*"],
+            "actionTypes": ["redux-files/actionTypes.js"],
+            "selectors": ["redux-files/selectors.js"],
+            "utils": ["utils.js"]
         }
     },
-    "include": [
-      "src/**/*"
-    ]
-  }
+    "include": ["src/**/*"],
+    "exclude": ["node_modules"]
+}
