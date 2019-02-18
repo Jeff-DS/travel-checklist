@@ -9,7 +9,11 @@ import { addItemToTripType } from 'actions/tripTypes';
 class AddItem extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
+        this.state = this.getInitialState();
+    }
+
+    getInitialState() {
+        return {
             itemToAdd: {
                 content: '',
                 category: '',
@@ -57,6 +61,8 @@ class AddItem extends React.Component {
                     tripType => this.state.tripTypes[tripType]
                 )
             );
+            // Reset form
+            this.setState(this.getInitialState());
         }
     };
 
