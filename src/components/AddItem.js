@@ -86,7 +86,7 @@ class AddItem extends React.Component {
                         value={
                             this.props.categories[
                                 this.state.itemToAdd.category.id
-                            ]
+                            ] || ''
                         }
                         onChange={this.onChange}
                     >
