@@ -96,11 +96,7 @@ class AddItem extends React.Component {
                     <select
                         name="category"
                         id="category-select"
-                        value={
-                            this.props.categories[
-                                this.state.itemToAdd.category.id
-                            ] || ''
-                        }
+                        value={this.state.itemToAdd.category || ''}
                         onChange={this.onChange}
                     >
                         <option value="">Category</option>
