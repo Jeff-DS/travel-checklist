@@ -12,6 +12,17 @@ class AddItem extends React.Component {
         this.state = this.getInitialState();
     }
 
+    // While the form is clean, keep the trip type selection in sync with the
+    // active trip type
+    componentDidUpdate(prevProps, prevState) {
+        if (
+            prevState.formIsClean &&
+            prevProps.activeTripType !== this.props.activeTripType
+        ) {
+            this.setState(this.getInitialState());
+        }
+    }
+
     getInitialState() {
         return {
             itemToAdd: {
@@ -24,7 +35,8 @@ class AddItem extends React.Component {
             tripTypes: arrayToObjectKeys(
                 Object.keys(this.props.tripTypes),
                 id => id === this.props.activeTripType
-            )
+            ),
+            formIsClean: true
         };
     }
 
@@ -34,6 +46,7 @@ class AddItem extends React.Component {
     };
 
     onChange = event => {
+        this.setState({ formIsClean: false });
         const target = event.target;
         const value =
             target.type === 'checkbox' ? target.checked : target.value;
